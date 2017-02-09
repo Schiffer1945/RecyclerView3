@@ -56,6 +56,14 @@ public class InputActivity extends AppCompatActivity {
         } else {
             setTitle("New Hotel");
         }
+
+        hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
+        if (hotel != null) {
+            setTitle("Edit" + hotel.judul);
+            fillData();
+        } else {
+            setTitle("New Hotel");
+        }
     }
 
     private void fillData() {
